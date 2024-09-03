@@ -12,6 +12,12 @@ import pandas as pd
 df=pd.read_csv('./grouped_data3.csv')
 df
 
+새로 만든 변수 없애고 지정한 위치에 두기
+df.insert(df.columns.get_loc('balance_group') + 1,
+              'age_balance',
+              df.pop('age_balance'))
+df
+
 
 모델 학습 전까지 해야 할 일
 맞습니다. `fit` 메소드를 호출하기 전에 데이터 전처리가 이미 완료되어야 합니다.
